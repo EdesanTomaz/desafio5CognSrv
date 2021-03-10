@@ -36,6 +36,7 @@ router.get('/', function(req, res, next) {
         photoResults.push({
           url: photo.url, 
           caption: titleCase(photo.description.captions[0].text),
+          text: photo.text.captions[0],
           confidence: Math.round(parseFloat(photo.description.captions[0].confidence) * 100),
           tags: photo.description.tags
         });
